@@ -1,0 +1,12 @@
+description: | 
+ This is temporary yaml file.
+ This file is created for testing
+ and practice. Please  ignore it
+
+data: 20/4/24
+
+auther info:
+ - name : Safeer Ahmad
+ - email: {safeer@temp.com , temp@temp.com}
+ - description : "ML ops developer"
+
