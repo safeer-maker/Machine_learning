@@ -3,20 +3,24 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder,MinMaxScaler
 from data_handling import *
 import config
+import os
 
 
-class data_preprocessing:
-    def __init__(self) -> None:
-        self.data = data_handling.data_handling.read_test_data()
+class data_preprocessing(data_handling):
+    def __init__(self):
+        super().__init__()
+        self.data = super().read_train_data_from ( config.PATH_OF_DATASET, config.TRAIN_DATA_NAME)
         print ("Data Preprocessing object created")
-        print(self.data.head())
+        # print(self.data.head())
 
     def drop_columns(self, data, columns):
         data = data.drop(columns, axis = 1)
+        
         return data
 
-    def fillna(self, data, value):
-        data = data.fillna(value)
+    def handling_na(self, data, value = 0):
+        data = data.dropna()
+        data = data.reset_index(drop = True)
         return data
 
     def label_encode(self, data, columns):
@@ -36,12 +40,17 @@ class data_preprocessing:
         return data
     
     def preprocess_data_pipeline(self):
-        print(self.data.head())
+        data = self.drop_columns(self.data, config.COLUMNS_DROP_BEFORE_PROCESSING)
+        data = self.handling_na(data)
+        data = self.label_encode(data, config.CATAGORICAL_COLUMNS)
+        data = self.min_max_scale(data, config.COLUMNS_TRAIN_DATASET)
         return data
+        
     
 if __name__ == '__main__':
     preprocessing = data_preprocessing()
     data = preprocessing.preprocess_data_pipeline()
-    print(data.head())
+    print(data)
+    # print(data.isna().sum())
 
 
