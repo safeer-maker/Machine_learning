@@ -67,10 +67,11 @@ class data_handling:
             data = pd.read_csv(path)
             return data
     
-    def save_train_processed_data(self, data, dataset_name = 'train_processed.csv'):
+    def save_processed_data (self, data, dataset_name = 'train_processed.csv', path = config.PATH_OF_DATASET ):
         path = os.path.join(self.path_train_processed, dataset_name)
         data.to_csv(path, index = False)
-        print('Data saved at ', path)
+        print('Processed Data saved at ', path)
+        return None
         
 
 if __name__ == '__main__':
@@ -79,4 +80,4 @@ if __name__ == '__main__':
     dh.read_test_data()
     dh.read_train_data_from(r"/home/safeer/Documents/ml/Ml_Models", 'tra.csv')
     dh.read_train_processed_data()
-    dh.save_train_processed_data(pd.DataFrame({'A':[1,2,3], 'B':[4,5,6]}))
+    dh.save_processed_data(pd.DataFrame({'A':[1,2,3], 'B':[4,5,6]}))
