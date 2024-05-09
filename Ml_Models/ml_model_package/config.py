@@ -23,6 +23,6 @@ Y_LABEL = 'Loan_Status'
 
 MODEL_NAME = 'DecisionTreeClassifier'
 
-MODEL_PATH = '/home/safeer/Documents/ml/Ml_Models/ml_model_package/model/DecisionTreeClassifier'
+MODEL_PATH = '/home/safeer/Documents/ml/Ml_Models/ml_model_package/models'
 
 
