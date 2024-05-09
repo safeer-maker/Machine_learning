@@ -19,3 +19,10 @@ COLUMNS_TRAIN_DATASET = ['Gender', 'Married', 'Dependents', 'Education', 'Self_E
                         'ApplicantIncome', 'CoapplicantIncome', 'LoanAmount',\
                         'Loan_Amount_Term', 'Credit_History', 'Property_Area', 'Loan_Status']
 
+Y_LABEL = 'Loan_Status'
+
+MODEL_NAME = 'DecisionTreeClassifier'
+
+MODEL_PATH = '/home/safeer/Documents/ml/Ml_Models/ml_model_package/model/DecisionTreeClassifier'
+
+

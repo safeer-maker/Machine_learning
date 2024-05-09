@@ -37,7 +37,7 @@ class data_handling:
             data = pd.read_csv(path)
             return data
         
-    def read_train_data_from(self, path ,dataset_name ):
+    def read_data_from (self, path ,dataset_name ):
         path = os.path.join(path, dataset_name)
         if not os.path.exists(path):
             print('File not found')
