@@ -54,9 +54,11 @@ class model_training_inferancing(data_handling):
         return accuracy_score(self.test_y, score)
     
     def save_model_results(self, score):
-        with open(config.MODEL_RESULTS_FILE, 'w') as f:
+        path = os.path.join(config.MODEL_PATH, config.MODEL_RESULTS_FILE)
+        with open(path, 'w') as f:
             f.write(f"Model: {config.MODEL_NAME}\n")
             f.write(f"Model Score: {score}\n")
+            print("Model Results saved at ", path)
         return None
     
     def pipline(self):
@@ -64,6 +66,7 @@ class model_training_inferancing(data_handling):
         self.train_model()
         self.save_model(self.model, config.MODEL_NAME)
         self.load_model()
+        self.save_model_results(self.model_score())
         print("Model Score: ", self.model_score())
         return None
 
