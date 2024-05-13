@@ -2,8 +2,8 @@ FROM ubuntu
 
 ARG WORKDIR=/root/ml
 
-ENV MODEL_PATH      = $WORKDIR/models
-ENV PATH_OF_DATASET = $WORKDIR/data
+# ENV MODEL_PATH      = $WORKDIR/models
+# ENV PATH_OF_DATASET = $WORKDIR/data
 
 
 RUN apt-get update && apt-get install -y \

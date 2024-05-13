@@ -10,7 +10,7 @@ import os
 class data_preprocessing(data_handling):
     def __init__(self):
         super().__init__()
-        self.data = super().read_train_data_from ( config.PATH_OF_DATASET, config.TRAIN_DATA_NAME)
+        self.data = super().read_data_from ( config.PATH_OF_DATASET, config.TRAIN_DATA_NAME)
         print ("Data Preprocessing object created")
         # print(self.data.head())
 
